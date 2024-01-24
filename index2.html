@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+	<title>Airtel Error Panel</title>
+	<style>
+        
+        body {
+        /* display: flex; */
+        flex-direction: column;
+        /* align-items: center; */
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+		table {
+          width: 100%;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          border-radius: 1%;
+          /* table-layout: fixed; */
+          /* overflow: hidden; */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5%;
+            white-space: nowrap;  
+            overflow: hidden;
+            max-width: 200px;
+            text-overflow: ellipsis;
+        }
+        th {
+          background-color: #4caf50;
+          color: white;
+        }
+        th:hover, td:hover {
+            background-color: #ddd;
+            overflow: visible;
+            white-space: normal;
+            word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+        }
+        /* tr:hover {
+            background-color: #ddd;
+        } */
+
+        .tab {   
+        background-color: rgb(238, 24, 24);
+        /* border: 1px solid #ccc;
+        border-radius: 1%; */
+        /* color: white; */
+        display: flex;
+        /* margin-bottom: 0px; */
+        white-space: nowrap;
+        overflow: hidden;
+        /* width: 100%; */
+        }
+
+        .tab h1 {
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 200%;
+            color: rgba(255, 255, 255, 0.977);
+            margin-top: 1.5%;
+            background-color: rgb(238, 24, 24);
+            float:left;
+            width: 100%;
+            
+        } 
+
+        .checkbox-container {
+            
+            margin-left: 60%;
+            margin-top: 2%;
+            align-items: right;
+            
+
+        }
+
+        label {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin-top: 5%;
+        }
+
+        input[type="checkbox"] {
+             transform: scale(1.5);          
+            cursor: pointer;
+           
+
+        }
+                
+        .pagination {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .pagination button {
+            background-color: rgb(168, 100, 100);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 2px;
+            cursor: pointer;
+            border-radius: 5px;
+   
+        }
+        .pagination button:hover {
+            background-color: red;
+        }        
+        
+        .logo {
+            width: 35%; 
+            height: 70%; 
+            /* height: auto; */
+            margin-top: 1.1%;
+            /* margin-top: 1.5%; */
+            overflow: hidden;
+            float:left;
+        }
+	</style>
+</head>
+<body>
+    
+<div class="tab">
+    <!-- https://s3-ap-southeast-1.amazonaws.com/bsy/iportal/images/airtel-logo-red-text-horizontal.jpg -->
+	<!-- -->
+        <img src="https://s3-ap-southeast-1.amazonaws.com/bsy/iportal/images/airtel-logo-white-text-horizontal.jpg" alt="Airtel Logo" class="logo">
+        <h1>Error Panel</h1>
+
+	<div class="checkbox-container">
+		<label for="reloadCB">Auto Refresh</label>
+		<input type="checkbox" onclick="toggleAutoRefresh(this);" id="reloadCB">
+	</div>
+
+    <div class="topnav">
+        <input id="searchbar" type="text" onkeyup="search_user()" placeholder="Search a user.">
+      </div>
+</div>
+<table id="table-container"></table>
+<script src="CsvToTable2.js"></script>
+<script>
+function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            console.log(urlParams);
+            return urlParams.get(name);
+           
+        }
+
+        // Retrieve the value of 'csvFile' parameter from the URL
+        const csvFileName = getQueryParam('csvFile');
+        console.log(csvFileName);
+        // Use csvFileName as needed, for example, load the CSV file using CsvToTable
+        var options = {
+            csvFile: csvFileName || 'MOCK_DATA.csv' // Use a default CSV file if 'csvFile' parameter is not present
+        };
+      
+        var csvToTable = new CsvToTable(options);
+        console.log(options);
+        csvToTable.run();
+        var currpage;
+
+function pageupdate(currentPage){
+        currpage = currentPage;
+    if(currpage===undefined)
+		{
+		if (window.location.hash.includes("#")) {
+			
+			if (window.location.hash.includes("autoreload/")) {
+				var hashValue = window.location.hash.split("/")[1];
+			}
+			else
+			{
+				var hashValue = window.location.hash.split("#")[1];
+				
+			}
+            if (hashValue) {
+				currpage = parseInt(hashValue);
+				// console.log(hashValue);
+				}
+		}
+		else
+		{
+			currpage = 1;		
+		}
+	}
+    return currpage;
+    }
+
+    function checkReloading() {
+    
+    if (window.location.hash.includes("autoreload/")) {
+        var hashValue = window.location.hash.split("/")[1];
+        if (hashValue) {
+            currpage = parseInt(hashValue);
+            console.log(hashValue);
+        }
+        reloading = setTimeout(function () {
+            window.location.reload();
+        }, 5000);
+        
+        document.getElementById("reloadCB").checked = true;
+    }
+}
+
+function toggleAutoRefresh(cb) {
+    if (cb.checked) {
+      
+        window.location.replace('#'+"autoreload/"+currpage); 
+       
+        reloading = setTimeout(function () {
+            window.location.reload();
+        }, 5000);
+    } else {
+        window.location.replace("#"+currpage);
+        clearTimeout(reloading);
+    }
+}
+
+console.log("Before window reload");
+currpage = pageupdate();
+console.log(currpage);
+window.onload=checkReloading;
+
+function search_user() { 
+    console.log("search_user start");
+				let input = document.getElementById('searchbar').value 
+				input=input.toLowerCase(); 
+                csvToTable.search(input);
+             
+			} 
+</script>
+<div id="pagination" class="pagination">
+    <button id="prevBtn">Previous</button>
+    <div id="pageNumbers"></div>
+    <button id="nextBtn">Next</button>
+</div>
+
+</body>
+</html>

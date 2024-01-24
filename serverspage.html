@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Servers Panel</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    .tab {
+        width: 100%;
+        background-color: rgb(238, 24, 24);
+        border: 1px solid #ccc;
+        border-radius: 1%;
+        color: white;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        /* overflow: hidden; */
+        margin-bottom: 10px;
+    }
+
+    .tab h1 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 200%;
+        color: rgba(255, 255, 255, 0.977);
+        background-color: rgb(238, 24, 24);
+        margin-top: 1.5%;
+    }
+
+    label {
+        font-family: Arial, sans-serif;
+        color: white;
+        margin-top: 5%;
+    }
+
+    .logo {
+        width: 10%;
+        height: auto;
+        margin-top: 0.8%;
+        float: left;
+    }
+
+    .container {
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+        /* justify-content: center; */
+        align-items: center;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 10px;
+
+        /* justify-content: space-between; */
+        /* border:1px solid black; */
+        /* color: beige; */
+      
+    }
+
+    .box {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        /* background-color: rgba(224, 188, 133, 0.979); */
+        /* background-color: burlywood; */
+        /* background-color: goldenrod; */
+        /* background-color: blanchedalmond; */
+        background-color: rgb(128, 18, 18);
+        /* border: 1px solid #ccc; */
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        /* color: #333; */
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        animation-name: animate;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+    @keyframes animate {
+        /* from {background-color: yellow;}
+        to {background-color: rgba(252, 113, 113, 0.844);} */
+         0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+}
+
+    .category {
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+        animation-name: animate;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        width: auto;
+        height: 60%;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        /* color: brown; */
+        margin: 5px;
+        font-weight: bold;
+        border:1px solid black;
+        border-radius: 10px;
+        /* align-self: auto; */
+
+    }
+</style>
+</head>
+<body>
+    
+ <div class="tab">
+    <!-- https://s3-ap-southeast-1.amazonaws.com/bsy/iportal/images/airtel-logo-red-text-horizontal.jpg -->
+        <img src="https://s3-ap-southeast-1.amazonaws.com/bsy/iportal/images/airtel-logo-white-text-horizontal.jpg" alt="Airtel Logo" class="logo">
+        <h1>Servers Panel</h1>
+</div>
+<div class="container">
+
+    <!-- Category 1 -->
+    <div class="category"><br> Category 1 Servers <br><br>
+        <a href="index2.html?csvFile=Dummyname.csv" class="box" target="_blank">Dummyname</a> 
+        <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a> 
+    <!-- <div class="category"><br> 5G <br><br>
+    <a href="index2.html?csvFile=JAGUAR.csv" class="box" target="_blank">JAGUAR</a>
+    <a href="index2.html?csvFile=FERRARI.csv" class="box" target="_blank">FERRARI</a>
+    <a href="index2.html?csvFile=LOTUS.csv" class="box" target="_blank">LOTUS</a>
+    <a href="index2.html?csvFile=MERCEDES.csv" class="box" target="_blank">MERCEDES</a>
+   -->
+</div> 
+
+    <!-- Category 2 -->
+    <div class="category"><br> Category 2 servers <br><br>
+        <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a> 
+        <a href="index2.html?csvFile=Random.csv" class="box" target="_blank">Random</a>
+    <!-- <div class="category"><br> CEIR<br><br>
+    <a href="index2.html?csvFile=tulip.csv" class="box" target="_blank">tulip</a>
+    <a href="index2.html?csvFile=FERRARI.csv" class="box" target="_blank">FERRARI</a>
+    -->
+</div> 
+ 
+    <!-- Category 3 -->
+    <div class="category"><br> Category 3 servers <br><br> 
+        <a href="index2.html?csvFile=Random.csv" class="box" target="_blank">Random</a>
+    <!-- <div class="category"><br> DARTS<br><br>
+    <a href="index2.html?csvFile=tulip.csv" class="box" target="_blank">tulip</a> 
+    <a href="index2.html?csvFile=REDBULL.csv" class="box" target="_blank">REDBULL</a>
+    <a href="index2.html?csvFile=MCLAREN.csv" class="box" target="_blank">MCLAREN</a> -->
+</div> 
+
+<div class="category"><br> Category 4 servers <br><br>
+    <a href="index2.html?csvFile=Servername.csv" class="box" target="_blank">Servername</a> 
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a> 
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- <div class="category"><br> GM<br><br>
+    <a href="index2.html?csvFile=kiwi.csv" class="box" target="_blank">kiwi</a> 
+    <a href="index2.html?csvFile=MARS.csv" class="box" target="_blank">MARS</a>
+    <a href="index2.html?csvFile=WOODLAND.csv" class="box" target="_blank">WOODLAND</a> -->
+</div> 
+
+<div class="category"><br> Category 5 servers <br><br>
+    <a href="index2.html?csvFile=Server.csv" class="box" target="_blank">Server</a> 
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- <div class="category"><br>IVR_USSD<br><br>
+    <a href="index2.html?csvFile=MAGPIE.csv" class="box" target="_blank">MAGPIE</a>  -->
+ 
+</div>
+
+<div class="category"><br> Category 6 servers<br><br>
+    <a href="index2.html?csvFile=Anotherexample.csv" class="box" target="_blank">Anotherexample</a> 
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- <div class="category"><br> M2M<br><br>
+    <a href="index2.html?csvFile=OSTRICH.csv" class="box" target="_blank">OSTRICH</a> 
+    <a href="index2.html?csvFile=HECTOR.csv" class="box" target="_blank">HECTOR</a>
+    <a href="index2.html?csvFile=FERRARI.csv" class="box" target="_blank">FERRARI</a> -->
+</div>
+
+<div class="category"><br> Category 7 servers <br><br>
+    <a href="index2.html?csvFile=AnotherDummyservername.csv" class="box" target="_blank">Dummyserver</a> 
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- 
+<div class="category"><br> PACS WEST<br><br>
+    <a href="index2.html?csvFile=porus.csv" class="box" target="_blank">porus</a> 
+    <a href="index2.html?csvFile=ashoka.csv" class="box" target="_blank">ASHOKA</a> -->
+</div>
+
+<div class="category"><br> Category 9 servers<br><br>
+    <a href="index2.html?csvFile=Aserver.csv" class="box" target="_blank">Aserver</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- <div class="category"><br> PACS_EAST<br><br>
+    <a href="index2.html?csvFile=TIPU.csv" class="box" target="_blank">TIPU</a> 
+    <a href="index2.html?csvFile=KANISHKA.csv" class="box" target="_blank">KANISHKA</a> -->
+</div>
+
+<div class="category"><br> Category 9 servers<br><br>
+    <a href="index2.html?csvFile=AnotherServer.csv" class="box" target="_blank">AnotherServer</a> 
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- <div class="category"><br> PACS_NORTH<br><br>
+    <a href="index2.html?csvFile=HERCULES.csv" class="box" target="_blank">HERCULES</a> 
+    <a href="index2.html?csvFile=VENUS.csv" class="box" target="_blank">VENUS</a>
+    <a href="index2.html?csvFile=SATURN.csv" class="box" target="_blank">SATURN</a>
+    <a href="index2.html?csvFile=MOON.csv" class="box" target="_blank">MOON</a> -->
+</div>
+
+<div class="category"><br> Category 10 servers<br><br>
+    <a href="index2.html?csvFile=server.csv" class="box" target="_blank">server</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- <div class="category"><br> PACS_SOUTH<br><br>
+    <a href="index2.html?csvFile=APOLLO.csv" class="box" target="_blank">APOLLO</a> 
+    <a href="index2.html?csvFile=SEOUL.csv" class="box" target="_blank">SEOUL</a> -->
+</div>
+
+<div class="category"><br> Category 11 servers<br><br>
+    <a href="index2.html?csvFile=dummy_server.csv" class="box" target="_blank">dummy_server</a> 
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+    <a href="index2.html?csvFile=Example.csv" class="box" target="_blank">Example</a>
+<!-- <div class="category"><br> POSTPAID<br><br>
+    <a href="index2.html?csvFile=ATLAS.csv" class="box" target="_blank">ATLAS</a> 
+    <a href="index2.html?csvFile=AVENGERS.csv" class="box" target="_blank">AVENGERS</a>
+    <a href="index2.html?csvFile=TATA.csv" class="box" target="_blank">TATA</a> 
+    <a href="index2.html?csvFile=ADDIDAS.csv" class="box" target="_blank">ADDIDAS</a>
+    <a href="index2.html?csvFile=THAR.csv" class="box" target="_blank">THAR</a>  -->
+</div>
+
+<div class="category"><br> Category 12 servers<br><br>
+    <a href="index2.html?csvFile=server_dummy_name.csv" class="box" target="_blank">server_dummy</a> 
+<!-- <div class="category"><br>SE<br><br>
+    <a href="index2.html?csvFile=REDBULL.csv" class="box" target="_blank">REDBULL</a>  -->
+</div>
+
+
+<div class="category"><br> Category 13 servers<br><br>
+    <a href="index2.html?csvFile=example_server.csv" class="box" target="_blank">example_server</a> 
+<!-- <div class="category"><br>THANKSAPP<br><br>
+    <a href="index2.html?csvFile=TIGER.csv" class="box" target="_blank">TIGER</a> 
+    <a href="index2.html?csvFile=EDISON.csv" class="box" target="_blank">EDISON</a>
+    <a href="index2.html?csvFile=Darwin.csv" class="box" target="_blank">Darwin</a> 
+    <a href="index2.html?csvFile=WOODPECK.csv" class="box" target="_blank">WOODPECK</a>
+    <a href="index2.html?csvFile=FLAMINGO.csv" class="box" target="_blank">FLAMINGO</a> 
+    <a href="index2.html?csvFile=IOT.csv" class="box" target="_blank">IOT</a>
+    <a href="index2.html?csvFile=creta.csv" class="box" target="_blank">creta</a> -->
+</div>
+
+<div class="category"><br> Category 14 servers<br><br>
+    <a href="index2.html?csvFile=server_Data.csv" class="box" target="_blank">server_Data</a> 
+
+<!-- <div class="category"><br> TWSS<br><br>
+    <a href="index2.html?csvFile=TIGER.csv" class="box" target="_blank">TIGER</a> 
+    <a href="index2.html?csvFile=LION.csv" class="box" target="_blank">LION</a>
+    <a href="index2.html?csvFile=WOODPECK.csv" class="box" target="_blank">WOODPECK</a>
+    <a href="index2.html?csvFile=MAGPIE.csv" class="box" target="_blank">MAGPIE</a>  -->
+</div>
+
+<div class="category"><br> Category 15 servers<br><br>
+    <a href="index2.html?csvFile=data.csv" class="box" target="_blank">data</a>
+<!-- <div class="category"><br> UD<br><br>
+    <a href="index2.html?csvFile=NEPTUNER.csv" class="box" target="_blank">NEPTUNE</a> 
+    <a href="index2.html?csvFile=falcon.csv" class="box" target="_blank">falcon</a>
+    <a href="index2.html?csvFile=THOR.csv" class="box" target="_blank">THOR</a> -->
+</div>
+
+<div class="category"><br> Category 16 servers<br><br>
+    <a href="index2.html?csvFile=instance.csv" class="box" target="_blank">instance</a>
+<!-- <div class="category"><br>VOLTE<br><br>
+    <a href="index2.html?csvFile=PLUTO.csv" class="box" target="_blank">PLUTO</a> 
+    <a href="index2.html?csvFile=COMPMEDI.csv" class="box" target="_blank">COMPMEDI</a> -->
+</div>
+</div>
+
+<script src="CsvToTable2.js"></script>
+<!-- <script> 
+
+// const servers = [
+//     { category: 'Category 1', filename: 'Server 1', link: 'index2.html?csvFile=abc.csv' },
+//     { category: 'Category 2', filename: 'Server 2', link: 'index2.html?csvFile=Category2_Server2.csv' },
+//     { category: 'Category 1', filename: 'Server 3', link: 'index2.html?csvFile=Category1_Server3.csv' },
+//     { category: 'Category 3', filename: 'Server 4', link: 'index2.html?csvFile=Category3_Server4.csv' },
+//     { category: 'Category 4', filename: 'Server 4', link: 'index2.html?csvFile=Category3_Server4.csv'},
+//     { category: 'Category 2', filename: 'Server 2', link: 'index2.html?csvFile=Category2_Server2.csv' }
+
+// ];
+
+// window.onload = function () {
+//     const container = document.querySelector('.container');
+
+//     // Create an object to store servers by category
+//     const serversByCategory = {};
+
+//     for (let i = 0; i < servers.length; i++) {
+//         const box = document.createElement('a');
+//         box.href = servers[i].link;
+//         box.target = '_blank';
+//         box.className = 'box';
+//         box.textContent = servers[i].filename;
+//         box.style.animationDelay = i * 0.5 + 's';
+//         container.appendChild(box);
+
+//         // Check if the category div for the current server's category exists
+//         let categoryDiv = serversByCategory[servers[i].category];
+
+//         if (!categoryDiv) {
+//             // If not, create a new category div
+//             categoryDiv = document.createElement('div');
+//             categoryDiv.className = 'category';
+//             categoryDiv.textContent = servers[i].category;
+//             container.appendChild(categoryDiv);
+
+//             // Store the category div for future reference
+//             serversByCategory[servers[i].category] = categoryDiv;
+//         }
+
+//         // Append the box to the category div
+//         categoryDiv.appendChild(box);
+//     }
+// };
+
+</script> -->
+
+</body>
+</html>
+<!-- <div class="tab">
+     https://s3-ap-southeast-1.amazonaws.com/bsy/iportal/images/airtel-logo-red-text-horizontal.jpg -->
+	<!-- -->
+        <!-- <img src="https://s3-ap-southeast-1.amazonaws.com/bsy/iportal/images/airtel-logo-white-text-horizontal.jpg" alt="Airtel Logo" class="logo">
+        <h1>Servers Panel</h1>
+</div>
+<div class="container"></div>
+<script src="CsvToTable2.js"></script>
+<script>
+const fileLinks = [
+'index2.html?csvFile=abc.csv',
+// 'index2.html?csvFile=C:\Users\gupta\dynamic_webpage\scripts\AirtelCustomerData.csv',
+'index2.html?csvFile=SampleFile4.csv',
+'index2.html?csvFile=SampleFile5.csv',
+'index2.html?csvFile=SampleFile6.csv',
+    ];
+
+window.onload = function() {
+      const container = document.querySelector('.container');
+      for (let i = 0; i < fileLinks.length; i++) {
+        const box = document.createElement('a');
+        box.href = fileLinks[i];
+        box.target = '_blank'; // Open link in a new tab
+        box.className = 'box'; 
+        var filename = fileLinks[i].split("="); 
+        // console.log(filename);
+        filename = filename[1].split('.csv'); 
+        box.textContent = filename[0];
+        box.style.animationDelay = i * 0.5 + 's';
+        container.appendChild(box);
+      }
+    };
+
+    
+  </script>
+ <div class="container">
+    <a href="error-panel.html?csvFile=SampleFile1.csv" class="box" target="_blank">File 1</a>
+    Add more links with different CSV files -->
+<!-- </div>  -->
+<!-- 
+</body>
+</html> --> 
